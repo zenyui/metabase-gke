@@ -11,7 +11,7 @@ Specifically, this Kubernetes (k8s) configuration comprises:
 
 - `k8-ingress.yaml`<br>[Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) resource that loadbalances traffic and terminates SSL/TLS. This configuration utilizes the ["gce" loadbalancer class](https://github.com/kubernetes/ingress-gce)
 
-### Preparation:
+### Preparation
 
 - Reserve a GCP [static ip](https://cloud.google.com/compute/docs/ip-addresses/reserve-static-external-ip-address)<br>
 `gcloud compute addresses create metabase-ip --global`
