@@ -23,16 +23,16 @@ case "$1" in
 
   delete)
     kubectl delete \
-      -f $2/k8-deployment.yaml \
-      -f $2/k8-service.yaml \
-      -f $2/k8-ingress.yaml
+      -f metabase/k8-deployment.yaml \
+      -f metabase/k8-service.yaml \
+      -f metabase/k8-ingress.yaml
     ;;
 
   create)
     kubectl create \
-      -f $2/k8-deployment.yaml \
-      -f $2/k8-service.yaml \
-      -f $2/k8-ingress.yaml
+      -f metabase/k8-deployment.yaml \
+      -f metabase/k8-service.yaml \
+      -f metabase/k8-ingress.yaml
     ;;
 
   *)
