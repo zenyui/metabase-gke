@@ -17,7 +17,7 @@ Specifically, this Kubernetes (k8s) configuration comprises:
 `gcloud compute addresses create metabase-ip --global`
 
 - Modify `./metabase/k8-deployment.yaml`:
-  - replace `<<INSTANCE_CONNETION_STRING>` with your cloud_sql_proxy [connection string](https://cloud.google.com/sql/docs/mysql/connect-admin-proxy)
+  - replace `<INSTANCE_CONNETION_STRING>` with your cloud_sql_proxy [connection string](https://cloud.google.com/sql/docs/mysql/connect-admin-proxy)
   - Update all environment vars prefixed `MB_DB_...` to match your cloud_sql_proxy configuration
 
 
