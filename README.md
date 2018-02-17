@@ -38,5 +38,5 @@ Provided shell script `k8.sh` can create and delete this entire Kuberentes.
 - Deploy metabase to the cluster with `k8.sh create`
 - Delete everything with `k8.sh delete`
 
-Resources:
+### Resources
 - [Official Metabase Container Instructions](https://www.metabase.com/docs/latest/operations-guide/running-metabase-on-docker.html)
