@@ -42,7 +42,7 @@ spec:
         - name: cloudsql
           image: gcr.io/cloudsql-docker/gce-proxy:1.11
           command: ["/cloud_sql_proxy",
-                    "-instances=verdant-abacus-130216:us-east1:funnel=tcp:9091,verdant-abacus-130216:us-east1:test-reporting-apps=tcp:9081",
+                    "-instances=<INSTANCE_CONNETION_STRING>",
                     "-credential_file=/secrets/cloudsql/cloudsql-gcp-key.json"]
           volumeMounts:
             - name: cloudsql-service-account
