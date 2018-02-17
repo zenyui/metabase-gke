@@ -8,16 +8,17 @@ case "$1" in
   secrets)
     kubectl delete secret metabase-db-cred
     kubectl create secret generic metabase-db-cred \
-      --from-file=username=secrets/metabase-db-username.txt \
-      --from-file=password=secrets/metabase-db-password.txt
+      --from-file=username=$K8_SECRETS/metabase-db-username.txt \
+      --from-file=password=$K8_SECRETS/metabase-db-password.txt
 
     kubectl delete secret cloudsql-gcp-key
-    kubectl create secret generic cloudsql-gcp-key --from-file=cloudsql-gcp-key.json=secrets/cloudsql-gcp-key.json
+    kubectl create secret generic cloudsql-gcp-key \
+      --from-file=cloudsql-gcp-key.json=secrets/cloudsql-gcp-key.json
 
-    kubectl delete secret eataly-io-tls
-    kubectl create secret generic eataly-io-tls \
-      --from-file=tls.key=$K8_SECRETS/eataly.io.tls.key \
-      --from-file=tls.crt=$K8_SECRETS/eataly.io.tls.crt
+    kubectl delete secret tls
+    kubectl create secret generic tls \
+      --from-file=tls.key=$K8_SECRETS/tls.key \
+      --from-file=tls.crt=$K8_SECRETS/tls.crt
     ;;
 
   delete)

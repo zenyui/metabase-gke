@@ -10,7 +10,7 @@ metadata:
     ingress.kubernetes.io/hsts-max-age: "0"
 spec:
   tls:
-  - secretName: eataly-io-tls
+  - secretName: tls
   backend:
     serviceName: metabase
     servicePort: 3000
