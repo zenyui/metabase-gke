@@ -23,7 +23,7 @@ gcloud container clusters get-credentials <cluster_name>
   ```sh
   kubectl config get-contexts
   ```
-  - Set contexts:
+  - Set context:
   ```sh
   kubectl config use-context <context>
   ```
