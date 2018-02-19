@@ -13,6 +13,11 @@ Specifically, this Kubernetes (k8s) configuration comprises:
 
 ### Preparation
 
+- Download the GKE credentials and apply as the kubectl context:
+```sh
+gcloud container clusters get-credentials <cluster_name>
+```
+
 - Reserve a GCP [static ip](https://cloud.google.com/compute/docs/ip-addresses/reserve-static-external-ip-address)<br>
 `gcloud compute addresses create metabase-ip --global`
 
@@ -32,7 +37,7 @@ Specifically, this Kubernetes (k8s) configuration comprises:
 
 ### Run
 
-Provided shell script `k8.sh` can create and delete this entire Kuberentes.
+Provided shell script `k8.sh` can create and delete this Kuberentes configuration in the cluster.
 
 - To create secrets, issue `k8.sh secrets`
 - Deploy metabase to the cluster with `k8.sh create`
