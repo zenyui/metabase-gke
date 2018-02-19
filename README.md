@@ -13,13 +13,25 @@ Specifically, this Kubernetes (k8s) configuration comprises:
 
 ### Preparation
 
-- Download the GKE credentials and apply as the kubectl context:
+- Download the GKE credentials:
 ```sh
 gcloud container clusters get-credentials <cluster_name>
 ```
 
-- Reserve a GCP [static ip](https://cloud.google.com/compute/docs/ip-addresses/reserve-static-external-ip-address)<br>
-`gcloud compute addresses create metabase-ip --global`
+- Apply GKE credentials as `kubectl` [context](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/#context):
+  - List available contexts:
+  ```sh
+  kubectl config get-contexts
+  ```
+  - Set contexts:
+  ```sh
+  kubectl config use-context <context>
+  ```
+
+- Reserve a GCP [static ip](https://cloud.google.com/compute/docs/ip-addresses/reserve-static-external-ip-address):
+```
+gcloud compute addresses create metabase-ip --global
+```
 
 - Modify `./metabase/k8-deployment.yaml`:
   - replace `<INSTANCE_CONNETION_STRING>` with your cloud_sql_proxy [connection string](https://cloud.google.com/sql/docs/mysql/connect-admin-proxy)
