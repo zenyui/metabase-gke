@@ -41,8 +41,10 @@ gcloud compute addresses create metabase-ip --global
 - Create `./secrets/cloudsql-gcp-key.json` with GCP service account key
 
 - Create metabase user credentials as text files:
-  - `echo -n "metabase" >> secrets/metabase-db-username.txt`
-  - `echo -n "password" >> secrets/metabase-db-password.txt`
+```sh
+echo -n "metabase" >> secrets/metabase-db-username.txt
+echo -n "password" >> secrets/metabase-db-password.txt
+```
 
 
 - Store the SSL/TLS cert and private key as `secrets/tls.crt` and `secrets/tls.key`
