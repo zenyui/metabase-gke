@@ -42,8 +42,8 @@ gcloud compute addresses create metabase-ip --global
 
 - Create metabase user credentials as text files:
 ```sh
-echo -n "metabase" >> secrets/metabase-db-username.txt
-echo -n "password" >> secrets/metabase-db-password.txt
+echo -n "metabase" > secrets/metabase-db-username.txt
+echo -n "password" > secrets/metabase-db-password.txt
 ```
 
 
