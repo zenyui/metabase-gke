@@ -36,9 +36,9 @@ spec:
             - name: MB_DB_DBNAME
               value: "metabase"
             - name: MB_DB_TYPE
-              value: "postgres"
+              value: "mysql"
             - name: MB_DB_PORT
-              value: "9081"
+              value: "3306"
         - name: cloudsql
           image: gcr.io/cloudsql-docker/gce-proxy:1.11
           command: ["/cloud_sql_proxy",
