@@ -14,11 +14,6 @@ case "$1" in
     kubectl delete secret cloudsql-gcp-key
     kubectl create secret generic cloudsql-gcp-key \
       --from-file=cloudsql-gcp-key.json=secrets/cloudsql-gcp-key.json
-
-    kubectl delete secret tls
-    kubectl create secret generic tls \
-      --from-file=tls.key=$K8_SECRETS/tls.key \
-      --from-file=tls.crt=$K8_SECRETS/tls.crt
     ;;
 
   delete)
